@@ -24,3 +24,13 @@ print(protoa)
 proto.clear()
 print (proto)
 
+protoa.reverse()
+print (protoa)
+
+
+proto2.append(99999)
+print (proto2)
+
+
+        
+
