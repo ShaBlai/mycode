@@ -24,7 +24,7 @@ while rockGuesses < 3 and answer !="alice in chains" and answer !="metallica" an
     #incrementing rockguesses
     rockGuesses = rockGuesses+1
     #prompt user with question
-    print("What are my three favorite 90s grunge/rock bands?")
+    print("What is one of my favorite 90s grunge/rock bands? There are three correct answers.")
     #gather user input
     answerMusic= input("Please enter your guess--> ")
     #lowercase user input
