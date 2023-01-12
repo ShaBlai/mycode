@@ -1,18 +1,27 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+"""Alta3 Research | RZFeeser@alta3.com
+   Solution to Customization 01"""
 
-#parse the keystone log and return the number of failed attempts
+# parse keystone.common.wsgi and return number of failed login attempts
+loginfail = 0 # counter for fails
+successful = 0 # total times we see pattern, "-] Authorization failed"
 
-loginfail = 0 #counter for the fails
+# open the file for reading
+with open("/home/student/mycode/attemptlogin/keystone.common.wsgi") as kfile:
 
-#open the keystone file log
-keystone_file = open("/home/student/mycode/attemptlogin/keystone.common.wsgi", "r")
+    # loop over the file
+    for line in kfile:
+        # if this 'fail pattern' appears in the line...
+        if "- - - - -] Authorization failed" in line:
+            loginfail += 1 # this is the same as loginfail = loginfail + 1
+        # the following elif agumentation MUST be AFTER we check for a fail
+        # this statement assumes the if statement above it tested false
+        elif "-] Authorization failed" in line:  # can ONLY be true if the "if" was false!
+            successful += 1 # this is the total number of times we see this pattern
 
-#read the lines in the file
-keystone_file_lines = keystone_file.readlines()
+# display the number of failed log in attempts
+print("The number of failed log in attempts is", loginfail)
 
-for line in keystone_file_lines:
-    if "- - - - -] Authorization failed." in line:
-        loginfail +=1
-print("The number of failed login attempts is", loginfail)
+# display the number of successful log in attempts
+print("The number of successful log ins is", successful)
 
-keystone_file.close()
