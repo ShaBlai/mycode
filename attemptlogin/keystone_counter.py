@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-"""Alta3 Research | RZFeeser@alta3.com
-   Solution to Customization 01"""
 
 # parse keystone.common.wsgi and return number of failed login attempts
 loginfail = 0 # counter for fails
