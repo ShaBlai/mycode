@@ -157,7 +157,10 @@ while gamerun:
             elif mega_millions_chance !="$Bajillion Jackpot!":
                 print(f"You have won {mega_millions_chance}!")
                 inventory.remove('lottery ticket')
-      
+        elif userinput3 ==('no'):
+            print("That's fine, nobody wins these things anyway")
+            inventory.remove('lottery ticket')
+                  
     ## If a player enters a room with pizza in it
     if (currentRoom == 'Pizza Parlor' and 'incomplete pizza' in inventory and 'magical pepperoni' in inventory):
         print('The Magical Pepperoni glows intensely the closer it is to the pizza...')
