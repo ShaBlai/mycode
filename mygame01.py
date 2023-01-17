@@ -51,7 +51,7 @@ rooms = {
                   'north' : 'Kitchen',
                   'east'  : 'Dining Room',
                   'item' : {'name' : 'Lottery Ticket','description':'This could change my life! Or leave me stuck in this place...'},
-                  'description' : 'The abandoned entrance/lobby of what used to be my favorite pizza place...reeks of old cardboard and deliciously bad cholesterol',
+                  'description' : 'The abandoned entrance/lobby of what used to be my favorite pizza place...reeks of old cardboard and deliciously bad cholesterol. You can move North, East, and West from here...',
                   'west' : 'Pizza Parlor'
                 },
 
@@ -59,26 +59,26 @@ rooms = {
                   'north' : 'Back-Alley',
                   'south' : 'Pizza Lobby',
                   'item' : {'name': 'Old-School Boombox', 'description': 'I used to jam out with these...talk about nostalgia!'},
-                  'description' : 'Dirty Dishes, Old Ingredients, and a block of Blue Cheese that used to be Mozzarella? Smells great...'
+                  'description' : 'Dirty Dishes, Old Ingredients, and a block of Blue Cheese that used to be Mozzarella? You can move North and South from here...'
                 },
                                      
             'Dining Room' : {
                   'west': 'Pizza Lobby',
                   'south' : 'Garden',
                   'item' : {'name': 'Magical Pepperoni', 'description': 'A pepperoni inscribed with the following.."Return me home, and so shall thee"'},
-                  'description': 'Where all the customers used to eat delicious pizzas...where has everyone gone?'
+                  'description': 'Where all the customers used to eat delicious pizzas...where has everyone gone? You can move West and South from here...'
                 },
             
             'Back-Alley' : {
                 'south' : 'Kitchen',
                 'item' : {'name':'Raggedy Cassette Tape', 'description': 'A weathered cassette tape...artist is unreadable, but the album is "Whenever You Need Somebody"'},
-                'description': 'Your typical sketchy, "do not want to hang out here long" type of area'
+                'description': 'Your typical sketchy, "do not want to hang out here long" type of area. You can move South from here...'
                 },
             
             'Pizza Parlor' : {
                 'east' : 'Pizza Lobby',
                 'item' : {'name': 'Incomplete Pizza', 'description': 'A pizza that radiates magical energy, however is missing a special topping...'},
-                'description' : 'A lone glowing pizza sits upon a golden pedestal...marble pillars and picasso artwork line the walls'                               
+                'description' : 'A lone glowing pizza sits upon a golden pedestal...marble pillars and picasso artwork line the walls. You can move East from here'                               
             }    
                               
          }
@@ -159,44 +159,24 @@ while gamerun:
                 inventory.remove('lottery ticket')
       
     ## If a player enters a room with pizza in it
-    if (currentRoom == 'Pizza Parlor' and 'incomplete pizza'  and 'magical pepperoni' in inventory):
+    if (currentRoom == 'Pizza Parlor' and 'incomplete pizza' in inventory and 'magical pepperoni' in inventory):
         print('The Magical Pepperoni glows intensely the closer it is to the pizza...')
         print('Would you like reunite the magical pepperoni to the pizza?')
-        userinput2 = input(" Yes or No :".lower())
+        userinput4 = input(" Yes or No :".lower())
         
-        if userinput2 == ('yes'):
-            print("The Pizza begins to glow brighter and brighter...your body begins to feel light as a feather and everything becomes dark...")
-            tprint("..................................")
-            print("You wake up in the back of a horse-drawn carriage...realizing you just had the weirdest nightmare ever")
-            tprint("...Hey you, you're finally awake")
-            tprint("A new adventure begins!")
-            break
-        elif userinput2 ==('no'):
-            print("You decided not to reunite the magical pepperoni...the pizza became angry and tranformed into a giant Monster!")
-            print("Which murdered you...great")
-            tprint("YOU DIED")
-            break 
-        
-      ## If a player enters a room with pizza in it
-    if (currentRoom == 'Dining Room'  and 'incomplete pizza'  and 'magical pepperoni' in inventory):
-        print('The Magical Pepperoni glows intensely the closer it is to the pizza...')
-        print('Would you like reunite the magical pepperoni to the pizza?')
-        userinput2 = input(" Yes or No :".lower())
-        
-        if userinput2 == ('yes'):
+        if userinput4 == ('yes'):
             print("The Pizza begins to glow brighter and brighter...your body begins to feel light as a feather and everything becomes dark...")
             print("..................................")
             print("You wake up in the back of a horse-drawn carriage...realizing you just had the weirdest nightmare ever")
             tprint("...Hey you, you're finally awake")
             tprint("A new adventure begins!")
             break
-        elif userinput2 ==('no'):
+        elif userinput4 ==('no'):
             print("You decided not to reunite the magical pepperoni...the pizza became angry and tranformed into a giant Monster!")
             print("Which murdered you...great")
             tprint("YOU DIED")
-            break          
-            
-   
+            break 
+        
     #generates the music webpage if they play the song
     if ('old-school boombox' and 'raggedy cassette tape' in inventory):
        
