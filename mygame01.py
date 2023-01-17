@@ -157,7 +157,7 @@ while gamerun:
             elif mega_millions_chance !="$Bajillion Jackpot!":
                 print(f"You have won {mega_millions_chance}!")
                 inventory.remove('lottery ticket')
-        elif userinput3 ==('no'):
+        elif userinput4 ==('no'):
             print("That's fine, nobody wins these things anyway...")
             inventory.remove('lottery ticket')
                   
