@@ -158,7 +158,7 @@ while gamerun:
                 print(f"You have won {mega_millions_chance}!")
                 inventory.remove('lottery ticket')
         elif userinput3 ==('no'):
-            print("That's fine, nobody wins these things anyway")
+            print("That's fine, nobody wins these things anyway...")
             inventory.remove('lottery ticket')
                   
     ## If a player enters a room with pizza in it
