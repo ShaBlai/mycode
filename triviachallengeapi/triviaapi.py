@@ -19,6 +19,7 @@ def main():
 
     #adds the json data to questions    
     myquestions = data.json()
+    print(myquestions)
      
     #parse through the json and return the questions/answers       
     question1 = myquestions['results'][0]['question']
