@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
-"""Friday Warmup | Returning Data From Complex JSON"""
-
 import requests
 import random
-
 
 #sets a random number between 1 & 31
 category = random.randint(1, 31)
@@ -19,18 +16,38 @@ def main():
 
     #adds the json data to questions    
     myquestions = data.json()
-    print(myquestions)
+    #print(myquestions)
      
     #parse through the json and return the questions/answers       
     question1 = myquestions['results'][0]['question']
     answer1 = myquestions['results'][0]['correct_answer']
+    incorrect1 =myquestions['results'][0]['incorrect_answers']
+   
     question2 = myquestions['results'][1]['question']
     answer2 = myquestions['results'][1]['correct_answer']
+    incorrect2 = myquestions['results'][1]['incorrect_answers']
+   
     question3 = myquestions['results'][2]['question']
     answer3 = myquestions['results'][2]['correct_answer']
+    incorrect3 = myquestions['results'][2]['incorrect_answers']
+     
+    bankofstuff1 = [answer1] 
+    bankofstuff1.extend(incorrect1)
+    print(bankofstuff1)
+    
+     
+    random.shuffle(bankofstuff1)
+    print(bankofstuff1)
+    #answebank1b = answerbank1
+    #answerbank2 =
+    #answerbank3 =         
+    
+   
     
     #prompt user with question
     print(question1)
+     
+    
     #ask for input
     userinput1 = input("What is the correct answer? \n")
     #logic for if the user gets the questions right
@@ -53,15 +70,6 @@ def main():
     else:
         print(f"That is incorrect, the correct answer is {answer3} \n")   
     
-    
-    
-   # print(question1)
-   # print(answer1)
-   # print(question2)
-   # print(answer2)
-   # print(question3)
-   # print(answer3)
-    
-
+  
 if __name__ == "__main__":
     main()
