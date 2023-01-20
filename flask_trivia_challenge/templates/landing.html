@@ -1,14 +1,75 @@
 <html>
-        <body>
-            <form action = "/" method = "POST">
+        <head>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   
+        
+        
+         <style>
+      body {
+        background-color: #e0f2f1;
+        align-items: center;
+      }
+      .card {
+        background-color: #e0f2f1;
+        border-color: #00897b;
+      }
+      .card-header {
+        background-color: #00897b;
+        color: white;
+      }
+      .btn-primary {
+        background-color: #00897b;
+        border-color: #00897b;
+      }
+      .btn-primary:hover {
+        background-color: #00695c;
+        border-color: #00695c;
+      }
+    </style>
+    
+    
+    
+        </head>        
+
+
+        <!-- <body class="d-flex align-items-center justify-content-center">
+            <form action = "/submit" method = "POST">
             <p><h3>Here is your question!</h3></p>
             <p> {{question1}} </p>
             {% for answer in answerbank1 %}
            <input type="radio" name="answer" value="{{answer}}"> {{answer}}<br>
             {% endfor %}
-            <!-- <p> {{answerbank1}} </p>
-            <p><input type = "text" name = "answer"/></p> -->
             <p><input type = "submit" value = "Submit"/></p>
             </form>
+            <h4>Your current points total {{userscore}}</h4>
+        </body> -->
+
+        <body class>
+            <div class="card-body">
+                <form class="align-center" action="{{ url_for('submit') }}" method="post">
+                  <h1 class = "text-center font-weight-bold mt-2">Welcome to The Quiz Factory!</h1>
+                  <h3 class="text-center font-weight-bold mt-2">Here is your question...</h3>
+                  <p class="text-center mt-2 font-weight-bold font-weight-italic">{{question1}} </p>  
+                  {% for answer in answerbank1 %}
+                  <div class="text-center form-check">
+                    <input class="form-check-input" type="radio" name="answer" id="{{ answer }}" value="{{ answer }}">
+                    <label class="form-check-label" for="{{ answer }}">
+                      {{ answer }}
+                    </label>
+                  </div>
+                  {% endfor %}
+                  <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                  <div class="text-center mt-2">
+                    <h3>Your score: {{ userscore }}</h3>
+                  </div>
+                </form>
+              </div>
+              
         </body>
+
+
+
+
 </html>

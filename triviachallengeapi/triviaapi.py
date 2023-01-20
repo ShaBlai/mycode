@@ -5,7 +5,7 @@ import random
 #sets a random number between 1 & 31
 category = random.randint(1, 31)
 #changes categories randomly depending on what number was selected
-URL= (f"https://opentdb.com/api.php?amount=3&category={category}")
+URL= (f"https://opentdb.com/api.php?amount=3")
 
 
 
