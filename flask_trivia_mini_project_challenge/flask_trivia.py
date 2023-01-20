@@ -58,13 +58,20 @@ def submit():
     print(request.form.get("answer"))
     #logic that verifies if the user selects the right answer
     #if user gets right, adds their points and keeps the game going
-    if request.form.get("answer").lower() == CORRECT_ANSWER1.lower():
-        USER_SCORE = USER_SCORE + 500
-        return redirect("/")
-    #if the user gets it wrong, erases their points and redirects to the wrong page
-    else:
+    
+    #try/except for getting correct answer/wrong answer/invalid input
+    try:
+        if request.form.get("answer").lower() == CORRECT_ANSWER1.lower():
+            USER_SCORE = USER_SCORE + 500
+            return redirect("/")
+        #if the user gets it wrong, erases their points and redirects to the wrong page
+        else:
+            USER_SCORE = 0
+            return redirect("/wrong")
+    #if the user submits without selecting a radio button    
+    except:
         USER_SCORE = 0
-        return redirect("/wrong")
+        return redirect("/wrong")    
     
 #creating the page and logic for the wrong page
 #attempting to add a joke api if you got it wrong
