@@ -30,24 +30,11 @@
     
     
         </head>        
-
-
-        <!-- <body class="d-flex align-items-center justify-content-center">
-            <form action = "/submit" method = "POST">
-            <p><h3>Here is your question!</h3></p>
-            <p> {{question1}} </p>
-            {% for answer in answerbank1 %}
-           <input type="radio" name="answer" value="{{answer}}"> {{answer}}<br>
-            {% endfor %}
-            <p><input type = "submit" value = "Submit"/></p>
-            </form>
-            <h4>Your current points total {{userscore}}</h4>
-        </body> -->
-
+        
         <body class>
             <div class="card-body">
                 <form class="align-center" action="{{ url_for('submit') }}" method="post">
-                  <h1 class = "text-center font-weight-bold mt-2">Welcome to The Quiz Factory!</h1>
+                  <h1 class = "text-center font-weight-bold mt-2">Welcome to Quiztastic!</h1>
                   <h3 class="text-center font-weight-bold mt-2">Here is your question...</h3>
                   <p class="text-center mt-2 font-weight-bold font-weight-italic">{{question1}} </p>  
                   {% for answer in answerbank1 %}

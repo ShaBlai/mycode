@@ -72,7 +72,7 @@ def submit():
 def wrongo():
     global RANDOJOKE
     
-    #api for the random joke to make users who got it wrong feel better 
+    #api for the random joke to make users feel better who got it wrong  
     JOKEURL= "https://official-joke-api.appspot.com/random_joke"
         
     #getting the joke JSON
