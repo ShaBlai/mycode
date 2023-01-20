@@ -1,0 +1,14 @@
+<html>
+        <body>
+            <form action = "/" method = "POST">
+            <p><h3>Here is your question!</h3></p>
+            <p> {{question1}} </p>
+            {% for answer in answerbank1 %}
+           <input type="radio" name="answer" value="{{answer}}"> {{answer}}<br>
+            {% endfor %}
+            <!-- <p> {{answerbank1}} </p>
+            <p><input type = "text" name = "answer"/></p> -->
+            <p><input type = "submit" value = "Submit"/></p>
+            </form>
+        </body>
+</html>

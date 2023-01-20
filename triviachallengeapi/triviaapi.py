@@ -30,26 +30,32 @@ def main():
     question3 = myquestions['results'][2]['question']
     answer3 = myquestions['results'][2]['correct_answer']
     incorrect3 = myquestions['results'][2]['incorrect_answers']
-     
-    bankofstuff1 = [answer1] 
-    bankofstuff1.extend(incorrect1)
-    print(bankofstuff1)
+         
+    def answerbank1() :
+        bankofstuff1 = [answer1] 
+        bankofstuff1.extend(incorrect1)
+        random.shuffle(bankofstuff1)
+        print(bankofstuff1)
+      
+    def answerbank2():
+        bankofstuff2 = [answer2]
+        bankofstuff2.extend(incorrect2)
+        random.shuffle(bankofstuff2)
+        print(bankofstuff2)
+        
+    def answerbank3():
+        bankofstuff3 =[answer3]
+        bankofstuff3.extend(incorrect3)
+        random.shuffle(bankofstuff3)
+        print(bankofstuff3)    
     
-     
-    random.shuffle(bankofstuff1)
-    print(bankofstuff1)
-    #answebank1b = answerbank1
-    #answerbank2 =
-    #answerbank3 =         
-    
-   
     
     #prompt user with question
     print(question1)
-     
+    answerbank1()
     
     #ask for input
-    userinput1 = input("What is the correct answer? \n")
+    userinput1 = input("What is the correct answer? Please type it! \n")
     #logic for if the user gets the questions right
     if userinput1 == answer1:
         print("Nice job, you are correct! \n")
@@ -57,14 +63,16 @@ def main():
         print(f"That is incorrect, the correct answer is {answer1} \n")
     
     print(question2)
-    userinput2 = input("What is the correct answer? \n")
+    answerbank2()
+    userinput2 = input("What is the correct answer? Please type it! \n")
     if userinput2 == answer2:
         print("Nice job, you are correct! \n")
     else:
         print(f"That is incorrect, the correct answer is {answer2} \n")
     
     print(question3)
-    userinput3 = input("What is the correct answer? \n")
+    answerbank3()
+    userinput3 = input("What is the correct answer? Please type it! \n")
     if userinput3 == answer3:
         print("Nice job, you are correct! \n")
     else:
